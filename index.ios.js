@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -11,21 +5,20 @@ import {
   Text,
   View
 } from 'react-native';
+import Button from 'react-native-button';
 
 export default class myBudget extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to myBudget!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+          To get started, log in or sign up below:
         </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Button style={styles.button}>Sign up</Button>
+        <Button style={styles.button}>Log in</Button>
       </View>
     );
   }
@@ -36,7 +29,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'white',
   },
   welcome: {
     fontSize: 20,
@@ -48,6 +41,14 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  button: {
+    width: 100,
+    height: 'auto',
+    margin: 10,
+    padding: 10,
+    backgroundColor: '#ADD8E6',
+    color: 'white',
+  }
 });
 
 AppRegistry.registerComponent('myBudget', () => myBudget);
