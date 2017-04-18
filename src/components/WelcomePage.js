@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import { connect } from 'react-redux';
 import Button from 'react-native-button';
+import { setUser } from '../reducers/user';
 
-export default class WelcomePage extends Component {
+const mapStateToProps = state => ({
+  userId: state.user.userId,
+});
+
+const mapDispatchToProps = dispatch => ({
+  setUser: (userId) => dispatch(setUser(userId)),
+});
+
+class WelcomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,7 +39,6 @@ export default class WelcomePage extends Component {
     );
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -59,4 +67,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('WelcomePage', () => WelcomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(WelcomePage);
