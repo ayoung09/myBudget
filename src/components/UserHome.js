@@ -15,6 +15,9 @@ class UserHome extends React.Component {
         <Text style={styles.welcome}>
           Welcome, {this.props.username}!
         </Text>
+        <Button style={styles.button}>Budgets</Button>
+        <Button style={styles.button}>Calendar</Button>
+        <Button style={styles.button}>Purchases</Button>
       </View>
     );
   }
@@ -29,6 +32,10 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
   },
+  button: {
+    margin: 10,
+    padding: 10,
+  }
 });
 
 export default connect(mapStateToProps, null)(UserHome);
