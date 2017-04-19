@@ -1,5 +1,6 @@
 const initialState = {
   userId: '',
+  username: 'Alexia',
 };
 
 const SET_USER = 'SET_USER';

@@ -11,13 +11,17 @@ import Button from 'react-native-button';
 import store from './src/store';
 
 import WelcomePage from './src/components/WelcomePage';
+import LogIn from './src/components/LogIn';
+import UserHome from './src/components/UserHome';
 
 export default class myBudget extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <Scene key="welcomePage" component={WelcomePage} initial={true} />
+          <Scene key="welcomePage" component={WelcomePage} />
+          <Scene key="logIn" component={LogIn} />
+          <Scene key="userHome" component={UserHome} initial={true} />
         </Router>
       </Provider>
     );
